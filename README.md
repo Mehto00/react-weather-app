@@ -1,3 +1,5 @@
+Project for learning React. Eventually my goal is to code a tiny app that takes citynames from user input and fetches matching data from API. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
