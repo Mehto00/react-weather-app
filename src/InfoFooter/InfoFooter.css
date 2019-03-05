@@ -1,0 +1,18 @@
+.infoFooter__list {
+    list-style: none;
+}
+
+.infoFooter__list__items {
+    display: inline;
+    margin-right: 5px;
+}
+
+.infoFooter__list__items::after {
+    content: " | ";
+    margin-left: 5px;
+}
+
+.infoFooter__list__items:last-child:after
+{
+  content: '';
+}
