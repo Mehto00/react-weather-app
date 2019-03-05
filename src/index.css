@@ -36,22 +36,3 @@ code {
   width: 100px;
 }
 
-.results {
-  margin-top: 10%;
-}
-
-.results h2 {
-  font-size: 3rem;
-  margin-bottom: 0;
-}
-
-.results .temp {
-  display: block;
-  font-size: 4rem;
-  margin-bottom: 2.5%;
-
-}
-
-.results .cUnit {
-  font-size: 2.4rem
-}

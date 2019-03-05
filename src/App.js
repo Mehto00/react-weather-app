@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import WeatherDisplay from './WeatherDisplay/WeatherDisplay';
 import WeatherSearch from './WeatherSearch/WeatherSearch';
+import InfoFooter from './InfoFooter/InfoFooter';
 
 class App extends Component {
   state = {
@@ -47,6 +48,7 @@ class App extends Component {
         <h1>My Weather App MVP</h1>
         <button onClick={this.toggleForecastViews}>Click!</button>
         {forecasts}
+        <InfoFooter />
       </div> 
     );
   }
