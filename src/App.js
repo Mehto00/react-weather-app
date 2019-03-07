@@ -18,36 +18,19 @@ class App extends Component {
         desc: 'Nice summer weather'
       }
     ],
-    showForecasts: false,
+    search: '',
   };
 
-  toggleForecastViews = () => {
-    const doesShow = this.state.showForecasts;
-    this.setState({showForecasts: !doesShow})
-  }
-
   render() {
-    
-    let forecasts = null;
-
-    if (this.state.showForecasts) {
-    forecasts =
-      <div>
-        <WeatherSearch />
-        {this.state.forecasts.map(forecast => {
-          return <WeatherDisplay 
-          city={forecast.city} 
-          temp={forecast.temp} 
-          desc={forecast.desc} />
-        })}
-      </div>
-      }
-
     return (
       <div className="App">
-        <h1>My Weather App MVP</h1>
-        <button onClick={this.toggleForecastViews}>Click!</button>
-        {forecasts}
+        <h1>My Weather App MVP</h1>        
+        <WeatherDisplay 
+          city={this.state.forecasts[0].city}
+          temp={this.state.forecasts[0].temp}
+          desc={this.state.forecasts[0].desc}
+        />
+        <WeatherSearch />
         <InfoFooter />
       </div> 
     );

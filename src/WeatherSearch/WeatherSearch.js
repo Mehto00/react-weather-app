@@ -1,12 +1,13 @@
 import React from 'react';
+import './WeatherSearch.css';
 
 const weatherDisplay = () => {
     return (
-    <div className="weatherDisplay">
+    <div className="weatherSearch">
 	<form action="/search" method="GET">
 		<input type="text" name="city" placeholder="city name" />
 		<br />
-		<input type="submit" />
+		<input type="submit" disabled/>
 	</form>
     </div>
     )

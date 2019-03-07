@@ -1,19 +1,35 @@
 .weatherDisplay {
-    margin-top: 10%;
+    display: flex;
+    background: tomato;
+  }
+
+  .weatherDisplay__animation {
+    flex: 1;
+    width: 50%;
+    background: rgb(140, 140, 140);
+  }
+
+  .weatherDisplay__content {
+    flex: 1;
+    width: 50%;
+    background: rgb(155, 155, 155);
   }
   
-  .weatherDisplay h2 {
+  .weatherDisplay__content__header {
     font-size: 3rem;
     margin-bottom: 0;
   }
   
-  .weatherDisplay__temp {
+  .weatherDisplay__content__temp {
     display: block;
     font-size: 4rem;
-    margin-bottom: 2.5%;
-  
   }
   
-  .weatherDisplay__cUnit {
+  .weatherDisplay__content__cUnit {
     font-size: 2.4rem
+  }
+
+  .weatherDisplay__content__desc {
+    display: block;
+    margin-bottom: 15%;
   }
