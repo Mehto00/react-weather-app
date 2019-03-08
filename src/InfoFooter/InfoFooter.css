@@ -1,3 +1,7 @@
+.infoFooter {
+    margin-top: auto;
+}
+
 .infoFooter__list {
     list-style: none;
 }

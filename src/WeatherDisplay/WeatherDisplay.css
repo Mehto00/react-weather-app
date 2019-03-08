@@ -5,13 +5,11 @@
 
   .weatherDisplay__animation {
     flex: 1;
-    width: 50%;
     background: rgb(140, 140, 140);
   }
 
   .weatherDisplay__content {
     flex: 1;
-    width: 50%;
     background: rgb(155, 155, 155);
   }
   
