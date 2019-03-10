@@ -7,7 +7,7 @@ const weatherDisplay = () => {
 	<form action="/search" method="GET">
 		<input type="text" name="city" placeholder="city name" />
 		<br />
-		<input type="submit" disabled/>
+		<input type="submit"/>
 	</form>
     </div>
     )

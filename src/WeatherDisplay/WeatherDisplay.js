@@ -5,8 +5,8 @@ const weatherDisplay = (props) => {
     return (
 
     <div className="weatherDisplay">
-    <div className="weatherDisplay__animation">
-    
+    <div className="weatherDisplay__content weatherDisplay__content--darker">
+        <img className="weatherDisplay__content__forecastIcon" src={props.icon} alt=""/>
     </div>
     <div className="weatherDisplay__content">
         <h2 className="weatherDisplay__content__header">{props.city}</h2>

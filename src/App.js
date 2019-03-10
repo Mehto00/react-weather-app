@@ -10,12 +10,14 @@ class App extends Component {
       {      
         city: 'Malaga', 
         temp: '28.4',
-        desc: 'Sunny as always'
+        desc: 'Sunny as always',
+        icon: 'http://openweathermap.org/img/w/11d.png'
       },
       {
         city: 'Benalmadena', 
         temp: '26.4',
-        desc: 'Nice summer weather'
+        desc: 'Nice summer weather',
+        icon: 'http://openweathermap.org/img/w/10d.png'
       }
     ],
     search: '',
@@ -29,6 +31,7 @@ class App extends Component {
           city={this.state.forecasts[0].city}
           temp={this.state.forecasts[0].temp}
           desc={this.state.forecasts[0].desc}
+          icon={this.state.forecasts[0].icon}
         />
         <WeatherSearch />
         <InfoFooter />
