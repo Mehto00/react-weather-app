@@ -28,19 +28,16 @@ class App extends Component {
 
   componentDidMount() {
     console.log(API_key.key);
-    console.log(`http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=' + ${API_key.key}`);
-    
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=' + ${API_key.key}`)
+    console.log(`http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=${API_key.key}`);
+
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=${API_key.key}`)
           .then(res => {
             console.log(res);
-            let data = res.data
-            this.setState({ data });
-            console.log(data)
           })
-          .catch(function (error) {            
+          .catch(function (error) {
             console.log(error);
-          });
-  }
+          })
+    };
 
   render() {
     return (
