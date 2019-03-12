@@ -8,17 +8,20 @@ const weatherDisplay = (props) => {
     return (
 
     <div className="weatherDisplay">
-    <div className="weatherDisplay__content weatherDisplay__content--darker">
-        <img className="weatherDisplay__content__forecastIcon" src={props.icon} alt=""/>
-    </div>
-    <div className="weatherDisplay__content">
-        <h2 className="weatherDisplay__content__header">{props.city}</h2>
-        <span className="weatherDisplay__content__temp">
-            {props.temp}<span className="weatherDisplay__content__cUnit">&#8451;</span>
-        </span>
-        <span className="weatherDisplay__content__desc">
-            <em>{props.desc}</em>
-        </span>
+    <div className="weatherDisplay_wrapper">
+        <div className="weatherDisplay__contentbox"> 
+            <h2 className="weatherDisplay__contentbox__header">{props.city}</h2>
+            <span className="weatherDisplay__contentbox__temp">
+                {props.temp}<span className="weatherDisplay__contentbox__cUnit">&#8451;</span>
+            </span>
+            <span className="weatherDisplay__contentbox__desc">
+                <em>{props.desc}</em>
+            </span>
+        </div>
+
+        <div className="weatherDisplay__contentbox weatherDisplay__icon-container">
+            <img className="weatherDisplay__icon-container__forecastIcon" src={props.icon} alt=""/>
+        </div>
     </div>
     </div>
     )

@@ -1,37 +1,47 @@
 .weatherDisplay {
-    display: flex;
-    background: tomato;
-  }
+  width: 100%;
+  background: rgb(245, 245, 245);
+  display: flex
+}
 
-  .weatherDisplay__content {
-    flex: 1;
-    background: rgb(155, 155, 155);
-  }
+.weatherDisplay_wrapper {
+  display: flex;
+  margin: 0 auto;
+  background: rgb(240, 240, 240);
+}
 
-  .weatherDisplay__content--darker {
-    background: rgb(140, 140, 140);
-  }
-  
-  .weatherDisplay__content__forecastIcon {
-    margin-top: 20px;
-    height: 180px;
-  }
+.weatherDisplay__contentbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0;
+  padding: 10px 0px 10px 35px;
+}
 
-  .weatherDisplay__content__header {
-    font-size: 3rem;
-    margin-bottom: 0;
-  }
-  
-  .weatherDisplay__content__temp {
-    display: block;
-    font-size: 4rem;
-  }
-  
-  .weatherDisplay__content__cUnit {
-    font-size: 2.4rem
-  }
+.weatherDisplay__contentbox__header {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
 
-  .weatherDisplay__content__desc {
-    display: block;
-    margin-bottom: 15%;
-  }
+.weatherDisplay__contentbox__temp {
+  display: block;
+  font-size: 4rem;
+}
+
+.weatherDisplay__contentbox__cUnit {
+  font-size: 2.4rem
+}
+
+.weatherDisplay__contentbox__desc {
+  display: block;
+  margin-bottom: 15%;
+}
+
+.weatherDisplay__icon-container {
+  padding-right: 35px;
+  padding-left: 15px;
+}
+
+.weatherDisplay__icon-container__forecastIcon {
+  height: 75px;
+}
