@@ -19,13 +19,16 @@ class App extends Component {
         city: 'Benalmadena', 
         temp: '26.4',
         desc: 'Nice summer weather',
-        icon: 'http://openweathermap.org/img/w/10d.png'
+        icon: '10d.png'
       }
     ],
     search: '',
-    data: {}
+    data: "",
+    temp: '',
+    desc: '',
+    iconURL: ""
   };
-
+  
   componentDidMount() {
     console.log(API_key.key);
     console.log(`http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=${API_key.key}`);
@@ -33,23 +36,32 @@ class App extends Component {
     axios.get(`http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=${API_key.key}`)
           .then(res => {
             console.log(res);
+            this.setState({data : res.data})
+            this.setState({temp : res.data.main.temp})
+            this.setState({desc : this.state.data.weather[0].description})
+            this.setState({iconURL : `http://openweathermap.org/img/w/${this.state.data.weather[0].icon}.png`})
+            console.log()
           })
           .catch(function (error) {
             console.log(error);
           })
     };
 
+  celciusConvertedTemp() {
+      return (Math.round((this.state.temp - 273.15) * 10) / 10) // return with one decimal
+              .toString().replace(".", ",") // format to finnish standard
+  }
+
   render() {
     return (
       <div className="App">
-        <h1>My Weather App MVP</h1>        
+        <h1>My Weather App MVP</h1>
         <WeatherDisplay 
-          city={this.state.forecasts[0].city}
-          temp={this.state.forecasts[0].temp}
-          desc={this.state.forecasts[0].desc}
-          icon={this.state.forecasts[0].icon}
+          city={this.state.data.name}
+          temp={this.celciusConvertedTemp()}
+          desc={this.state.desc}
+          icon={this.state.iconURL}
         />
-        <p>{this.state.data.name}</p>
         <WeatherSearch />
         <InfoFooter />
       </div> 

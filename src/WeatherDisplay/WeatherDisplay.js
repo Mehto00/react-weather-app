@@ -1,7 +1,10 @@
 import React from 'react';
 import './WeatherDisplay.css';
 
+
+
 const weatherDisplay = (props) => {
+
     return (
 
     <div className="weatherDisplay">
