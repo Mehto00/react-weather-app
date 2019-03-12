@@ -3,6 +3,8 @@ import './App.css';
 import WeatherDisplay from './WeatherDisplay/WeatherDisplay';
 import WeatherSearch from './WeatherSearch/WeatherSearch';
 import InfoFooter from './InfoFooter/InfoFooter';
+import axios from 'axios';
+import API_key from './API_key';
 
 class App extends Component {
   state = {
@@ -21,7 +23,24 @@ class App extends Component {
       }
     ],
     search: '',
+    data: {}
   };
+
+  componentDidMount() {
+    console.log(API_key.key);
+    console.log(`http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=' + ${API_key.key}`);
+    
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=' + ${API_key.key}`)
+          .then(res => {
+            console.log(res);
+            let data = res.data
+            this.setState({ data });
+            console.log(data)
+          })
+          .catch(function (error) {            
+            console.log(error);
+          });
+  }
 
   render() {
     return (
@@ -33,6 +52,7 @@ class App extends Component {
           desc={this.state.forecasts[0].desc}
           icon={this.state.forecasts[0].icon}
         />
+        <p>{this.state.data.name}</p>
         <WeatherSearch />
         <InfoFooter />
       </div> 
